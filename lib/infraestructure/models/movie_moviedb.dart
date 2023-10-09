@@ -15,7 +15,6 @@ class MovieMovieDB {
         required this.voteAverage,
         required this.voteCount,
     });
-
     final bool adult;
     final String backdropPath;
     final List<int> genreIds;
