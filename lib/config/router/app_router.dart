@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:proyecto_cine_flutter/presentation/screens/movies/home_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',

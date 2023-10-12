@@ -1,6 +1,5 @@
 import 'movie_moviedb.dart';
 
-
 class MovieDbResponse {
     MovieDbResponse({
         required this.dates,

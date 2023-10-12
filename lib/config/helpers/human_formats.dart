@@ -1,5 +1,6 @@
 import 'package:intl/intl.dart';
 
+//formato para los decimales
 class HumanFormats{
   static String number (double number){
     final formattedNumber = NumberFormat.compactCurrency(

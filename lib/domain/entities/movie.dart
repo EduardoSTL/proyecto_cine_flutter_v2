@@ -1,3 +1,4 @@
+// metadatos de las peliculas/categorias
 class Movie{
   final bool adult;
   final String backdropPath;

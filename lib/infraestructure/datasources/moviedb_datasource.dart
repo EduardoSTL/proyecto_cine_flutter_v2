@@ -7,6 +7,7 @@ import 'package:proyecto_cine_flutter/infraestructure/models/moviedb_response.da
 
 class MoviedbDatasource extends MovieDataSource{
 
+  //* config de la api(JSON)
   final dio = Dio(BaseOptions(
     baseUrl: 'https://api.themoviedb.org/3',
     queryParameters: {
@@ -20,7 +21,7 @@ class MoviedbDatasource extends MovieDataSource{
     final movieDBResponse = MovieDbResponse.fromJson(json);
 
     final List<Movie> movies = movieDBResponse.results
-    .where((moviedb) => moviedb.posterPath != 'no poster')
+    .where((moviedb) => moviedb.posterPath != 'no-poster')
     .map(
       (moviedb) => MovieMapper.movieDBToEntity(moviedb)
     ).toList();
@@ -28,6 +29,7 @@ class MoviedbDatasource extends MovieDataSource{
     return movies;
   }
 
+//rutas de los metodos de categorias de la pantalla de inicio
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) async {
     final response = await dio.get(

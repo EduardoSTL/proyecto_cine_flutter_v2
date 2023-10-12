@@ -1,7 +1,7 @@
 import 'package:proyecto_cine_flutter/domain/entities/movie.dart';
 
 abstract class MovieDataSource{
-
+  //metodos para definir las categorias
   Future<List<Movie>> getNowPlaying({int page = 1});
 
   Future<List<Movie>> getPopular({int page = 1});
