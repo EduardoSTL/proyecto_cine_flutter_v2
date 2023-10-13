@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:proyecto_cine_flutter/config/router/app_router.dart';
 import 'package:proyecto_cine_flutter/config/theme/app_theme.dart';
 
+//test new ver. app 
 Future<void> main() async{
   await dotenv.load(fileName: '.env');
 
