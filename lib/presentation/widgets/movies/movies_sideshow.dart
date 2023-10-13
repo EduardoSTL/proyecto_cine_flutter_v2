@@ -3,6 +3,7 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:proyecto_cine_flutter/domain/entities/movie.dart';
 
+//config del encabezado animado
 class MoviesSlideshow extends StatelessWidget {
   
   final List<Movie> movies;

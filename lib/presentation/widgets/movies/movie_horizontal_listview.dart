@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_cine_flutter/config/helpers/human_formats.dart';
 import 'package:proyecto_cine_flutter/domain/entities/movie.dart';
 
+//config propia de la vista en horizontal
 class MovieHorizontalListview extends StatefulWidget {
 
   final List<Movie> movies;

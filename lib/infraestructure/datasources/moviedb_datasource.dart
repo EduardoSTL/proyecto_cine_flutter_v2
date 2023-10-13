@@ -9,6 +9,7 @@ class MoviedbDatasource extends MovieDataSource{
 
   //* config de la api(JSON)
   final dio = Dio(BaseOptions(
+    //* definir la ruta de la API
     baseUrl: 'https://api.themoviedb.org/3',
     queryParameters: {
       'api_key': Enviroment.theMovieDbKey,
@@ -30,14 +31,17 @@ class MoviedbDatasource extends MovieDataSource{
   }
 
 //rutas de los metodos de categorias de la pantalla de inicio
+//* request de los metodos que traen las categorias de las pelis
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) async {
     final response = await dio.get(
+      //mandar a llamar los datos de la categoria de la api the movie db
     '/movie/now_playing',
     queryParameters: {
       'page': page
     }
     );
+    //! devuleve un JSON con las estructura de la clase movies
     return _jsonToMovies(response.data);
   }
 
