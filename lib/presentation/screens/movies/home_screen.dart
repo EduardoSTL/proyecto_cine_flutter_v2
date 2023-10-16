@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:proyecto_cine_flutter/presentation/providers/movies/initial_loading_provider.dart';
 import 'package:proyecto_cine_flutter/presentation/providers/movies/movies_providers.dart';
-import 'package:proyecto_cine_flutter/presentation/providers/movies/movies_sideshow_provider.dart';
+import 'package:proyecto_cine_flutter/presentation/providers/movies/movies_slideshow_provider.dart';
 import 'package:proyecto_cine_flutter/presentation/widgets/movies/movie_horizontal_listview.dart';
 import 'package:proyecto_cine_flutter/presentation/widgets/movies/movies_sideshow.dart';
 import 'package:proyecto_cine_flutter/presentation/widgets/shared/custom_appbar.dart';

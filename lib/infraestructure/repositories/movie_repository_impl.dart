@@ -1,6 +1,6 @@
 import 'package:proyecto_cine_flutter/domain/datasource/movie_datasource.dart';
 import 'package:proyecto_cine_flutter/domain/entities/movie.dart';
-import 'package:proyecto_cine_flutter/domain/repositories/movies_repositories';
+import 'package:proyecto_cine_flutter/domain/repositories/movies_repositories.dart';
 
 class MovieRepositoryImpl extends MoviesRepositories{
   final MovieDataSource datasource;
@@ -24,5 +24,10 @@ class MovieRepositoryImpl extends MoviesRepositories{
   @override
   Future<List<Movie>> getUpcoming ({int page = 1}) {
     return datasource.getUpcoming(page: page);
+  }
+
+  @override
+  Future<Movie> getMovieById(String id){
+    return datasource.getMovieById(id);
   }
 }
