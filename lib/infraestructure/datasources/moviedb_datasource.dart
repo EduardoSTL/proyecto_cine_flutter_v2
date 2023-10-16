@@ -3,7 +3,8 @@ import 'package:proyecto_cine_flutter/config/constants/flutter_dotenv.dart';
 import 'package:proyecto_cine_flutter/domain/datasource/movie_datasource.dart';
 import 'package:proyecto_cine_flutter/domain/entities/movie.dart';
 import 'package:proyecto_cine_flutter/infraestructure/mappers/movie_mapper.dart';
-import 'package:proyecto_cine_flutter/infraestructure/models/moviedb_response.dart';
+import 'package:proyecto_cine_flutter/infraestructure/models/moviedb/movie_details.dart';
+import 'package:proyecto_cine_flutter/infraestructure/models/moviedb/moviedb_response.dart';
 
 class MoviedbDatasource extends MovieDataSource{
 
@@ -76,5 +77,15 @@ class MoviedbDatasource extends MovieDataSource{
     }
     );
     return _jsonToMovies(response.data);
+  }
+
+  @override
+  Future<Movie> getMovieById(String id) async {
+    final response = await dio.get('/movie/$id');
+    if (response.statusCode != 200) throw Exception('Movie with id: $id not found');
+
+    final movieDetails = MovieDetails.fromJson(response.data);
+    final Movie movie = MovieMapper.movieDetailsToEntity(movieDetails);
+    return movie; 
   }
 }
