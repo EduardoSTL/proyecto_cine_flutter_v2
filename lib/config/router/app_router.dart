@@ -1,4 +1,3 @@
-import 'dart:js';
 import 'package:go_router/go_router.dart';
 import 'package:proyecto_cine_flutter/presentation/screens/movies/home_screen.dart';
 import 'package:proyecto_cine_flutter/presentation/screens/movies/movie_screen.dart';
