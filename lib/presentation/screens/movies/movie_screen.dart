@@ -26,9 +26,8 @@ class MovieScreenState extends ConsumerState<MovieScreen> {
     super.initState();
 
     ref.read(movieInfoProvider.notifier).loadMovie(widget.movieId);
-    ref.read(actorsByMovieProvider.notifier).loadActors(widget.actorsId);
-    //ref.read(actorsByMovieProvider.notifier).loadActors(widget.movieId);
-
+    ref.read(actorsByMovieProvider.notifier).loadActors(widget.movieId);
+    }
     @override
     Widget build(BuildContext context){
       final Movie? movie = ref.watch(movieInfoProvider)[widget.movieId];
@@ -52,19 +51,18 @@ class MovieScreenState extends ConsumerState<MovieScreen> {
         ),
       );
     }
-  }
+  
 }
 
 class _MovieDetails extends StatelessWidget {
 
   final Movie movie;
-
   const _MovieDetails({required this.movie});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final TextStyle = Theme.of(context).textTheme;
+    final textStyles = Theme.of(context).textTheme;
     
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,7 +86,7 @@ class _MovieDetails extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(movie.title, style: TextStyle.titleLarge),
+                    Text(movie.title, style: textStyles.titleLarge),
                     Text(movie.overview)
                   ],
                 ),

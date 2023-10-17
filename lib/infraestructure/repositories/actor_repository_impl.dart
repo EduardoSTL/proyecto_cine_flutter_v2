@@ -6,8 +6,8 @@ import 'package:proyecto_cine_flutter/infraestructure/datasources/actor_moviedb_
 class ActorRepositoryImpl extends ActorsRepository{
   
   final ActorsDatasource datasource;
-
-  ActorRepositoryImpl(ActorMovieDbDatasource actorMovieDbDatasource, {required this.datasource});
+  ActorRepositoryImpl(this.datasource);
+  //! ActorRepositoryImpl(ActorMovieDbDatasource actorMovieDbDatasource, {required this.datasource});
   
   @override
   Future<List<Actor>> getActorsByMovie(String movieId){
